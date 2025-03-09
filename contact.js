@@ -32,16 +32,15 @@ async function fillContactForm(url, contactDetails) {
   await page.click('button[type="submit"]', { delay: 100 });
 
   // Wait for a short duration to allow navigation
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  await page.waitForTimeout(2000);
 
   // Log the current URL after submission for debugging
-  console.log('Current URL after submission:', page.url());
+  const currentUrl = page.url();
+  console.log('Current URL after submission:', currentUrl);
 
   // Wait for a response or a specific element to confirm submission
   try {
-    await page.waitForSelector('.confirmation-message', { visible: true, timeout: 120000 });
-    console.log('Contact form submitted successfully');
-
+    await page.waitForSelector('.confirmation-message', { visible: true, timeout: 180000 });
     console.log('Contact form submitted successfully');
   } catch (error) {
     console.error('Error waiting for confirmation message:', error);

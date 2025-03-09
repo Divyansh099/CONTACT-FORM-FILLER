@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Filler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-paper-plane"></i> Contact Form Filler</h1>
+            <p>Fill contact forms on multiple websites with a single submission</p>
+        </header>
+
+        <main>
+            <form id="contact-form">
+                <div class="form-section">
+                    <h2>Your Contact Information</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Target Websites</h2>
+                    <p>Select the websites where you want to submit this contact information:</p>
+                    
+                    <div class="website-options">
+                        <div class="website-option">
+                            <input type="checkbox" id="website1" name="websites" value="https://3mmaven.com/contact" checked>
+                            <label for="website1">3M Maven</label>
+                        </div>
+                        <div class="website-option">
+                            <input type="checkbox" id="website2" name="websites" value="https://example.com/contact">
+                            <label for="website2">Example Website</label>
+                        </div>
+                        <div class="website-option">
+                            <input type="checkbox" id="website3" name="websites" value="https://test.com/contact">
+                            <label for="website3">Test Website</label>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-website">
+                        <h3>Add Custom Website</h3>
+                        <div class="form-group">
+                            <label for="custom-url">Website URL</label>
+                            <input type="url" id="custom-url" name="custom-url" placeholder="https://example.com/contact">
+                        </div>
+                        <button type="button" id="add-website" class="secondary-button">Add Website</button>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-button">
+                        <i class="fas fa-paper-plane"></i> Submit to All Selected Websites
+                    </button>
+                </div>
+            </form>
+
+            <div id="status-container" class="hidden">
+                <h2>Submission Status</h2>
+                <div id="status-list"></div>
+                <div class="loader" id="main-loader"></div>
+                <button id="back-button" class="secondary-button hidden">
+                    <i class="fas fa-arrow-left"></i> Back to Form
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Contact Form Filler | <a href="https://github.com/yourusername/contact-form-filler">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
